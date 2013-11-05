@@ -1,2 +1,6 @@
 <h1> Craigslist Underground TM </h1>
-<h2> This page coming soon </h2>
+<h2><%= @current_category %></h2>
+<% @all_posts.each do |post| %>
+<%="post #{post.id}"%><br/><a href><%=post.name%></a><br/>
+<% end %>
+

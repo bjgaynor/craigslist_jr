@@ -1,19 +1,20 @@
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
-get '/firearms/posts' do
-
-  erb :cat1_posts
+get '/categories/:id/posts' do
+  @current_category = Category.find(params[:id]).name
+  @all_posts = Category.find(params[:id]).posts
+  erb :category
 end
 
-get '/explosives/posts' do
+# get '/categories/:id/posts/:id' do
+#   @current_category = Category.find(params[:id]).name
+#   @all_posts = Category.find(params[:id]).posts
+#   erb :category
+# end
 
-  erb :cat2_posts
-end
+#Need to work on getting down to the post description, etc..
 
-get '/drugs/posts' do
 
-  erb :cat3_posts
-end
+
